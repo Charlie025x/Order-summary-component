@@ -13,6 +13,11 @@ body {
   font-family: 'Red Hat Display', sans-serif;
   font-size: 16px;
   background-color: var(--clr-pale-blue);
+  background-image: url(../images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: -10%;
+  // code bellow centers my card
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,32 +27,81 @@ body {
 
 .card {
   background-color: var(--clr-very-pale-blue);
-  width: 25rem;
+  background-color: white;
+  width: 20rem;
   color: var(--clr-desaturated-blue);
+  border-radius: 1rem;
+  overflow: hidden;
+  filter: drop-shadow(0 5px 5px var(--clr-desaturated-blue));
   .banner-container img {
     width: 100%;
     height: 100%;
   }
   .text-container {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     h1 {
       color: var(--clr-dark-blue);
       font-weight: 900;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      // margin-top: 1rem;
+      & + p {
+        margin-bottom: 1rem;
+        font-size: 15px;
+        line-height: 1.5;
+      }
     }
     .advertisement {
-      // display: flex;
-      background-color: var(--clr-pale-blue);
-      p a {
-        color: var(--clr-dark-blue);
-        font-weight: 900;
+      display: flex;
+      background-color: var(--clr-very-pale-blue);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: .5rem;
+      align-items: center;
+      text-align: start;
+      .icon-music {
+        // background-color: var(--clr-desaturated-blue);
+        margin-right: 1rem;
+      }
+      p {
+        line-height: 1.5;
+        a {
+          color: var(--clr-dark-blue);
+          font-weight: 700;
+        }
+      }
+      > a {
+        color: var(--clr-bright-blue);
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+          opacity: .5;
+        }
       }
     }
     button {
       // display: block;
       width: 100%;
+      background-color: var(--clr-bright-blue);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: .5rem;
+      filter: drop-shadow(0 12px 4px var(--clr-pale-blue));
+      color: var(--clr-very-pale-blue);
+      font-weight: 700;
       &:hover {
         cursor: pointer;
+        opacity: .5;
+      }
+    }
+    .btn-cancel {
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        color: var(--clr-dark-blue);
       }
     }
   }
@@ -55,7 +109,17 @@ body {
 
 .attribution {
   font-size: 11px; text-align: center;
+  transform: translate(0, 20px);
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: 50rem) {
+  body {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+  .card {
+    width: 24rem;
   }
 }
